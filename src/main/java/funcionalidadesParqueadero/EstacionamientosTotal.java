@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package com.hdpa2.proyectofinalhdpa2;
+package funcionalidadesParqueadero;
 
 /**
  *
@@ -71,11 +71,20 @@ public class EstacionamientosTotal {
         estacionamientos[fila][columna].asignarCategoria(tipo);
     }
     
+    /*En la matriz de disponibilidad necesitamos la Fila, columna, ocupacion
+    y para los que no son por minuto la categoria*/
     public String obtenerCategoriaIndividualEstacionamiento(char fila,byte columna){
         //Al momento de tener que mostrar cada categoria
         return estacionamientos[fila][columna].obtenerCategoria();
     }
     
+    public String obtenerFIlaColumnaIndividual(char fila, byte columna){
+        return estacionamientos[fila][columna].obtenerFila() +  String.valueOf(estacionamientos[fila][columna].obtenerColumna()) ;
+        /*toma como parametro la fila y la columna de la matriz para retornar la letra y el numero asignado
+        como deseamoss usar estos valores como cadenas de texto, realizamos la conversion necesaria*/
+    }
+    
+  
     
     
 }

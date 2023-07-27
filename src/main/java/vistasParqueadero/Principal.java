@@ -41,13 +41,14 @@ public class Principal extends javax.swing.JFrame {
         registrarVehiculo = new RegistrarVehiculo();
         totalRecaudado = new TotalRecaudado();
         
-        cierre.setBounds(400,0,400,600);
-        cobro.setBounds(400,0,400,600);
-        configurarEstacionamiento.setBounds(400,0,400,600);
-        consultarDisponibilidad.setBounds(400,0,400,600);
-        ingresarVehiculo.setBounds(400,0,400,600);
-        registrarVehiculo.setBounds(400,0,400,600);
-        totalRecaudado.setBounds(400,0,400,600);
+        jPanel2.setBounds(0,0,400,600);
+        cierre.setBounds(400,0,600,600);
+        cobro.setBounds(400,0,600,600);
+        configurarEstacionamiento.setBounds(400,0,600,600);
+        consultarDisponibilidad.setBounds(400,0,600,600);
+        ingresarVehiculo.setBounds(400,0,600,600);
+        registrarVehiculo.setBounds(400,0,600,600);
+        totalRecaudado.setBounds(400,0,600,600);
         
         add(cierre);
         add(cobro);
@@ -90,11 +91,14 @@ public class Principal extends javax.swing.JFrame {
         botonCierreCaja = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setMaximumSize(new java.awt.Dimension(1000, 600));
+        setResizable(false);
 
         jPanel2.setBackground(new java.awt.Color(102, 102, 255));
-        jPanel2.setMaximumSize(new java.awt.Dimension(800, 600));
+        jPanel2.setMaximumSize(new java.awt.Dimension(400, 600));
+        jPanel2.setName(""); // NOI18N
 
-        jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Administración del Estacionamiento");
@@ -207,12 +211,12 @@ public class Principal extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 400, Short.MAX_VALUE))
+                .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 600, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();
