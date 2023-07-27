@@ -8,12 +8,12 @@ package vistasParqueadero;
  *
  * @author ANTONIO
  */
-public class TotalRecaudado extends javax.swing.JPanel {
+public class Cierre extends javax.swing.JPanel {
 
     /**
-     * Creates new form TotalRecaudado
+     * Creates new form Cierre
      */
-    public TotalRecaudado() {
+    public Cierre() {
         initComponents();
     }
 
@@ -26,7 +26,7 @@ public class TotalRecaudado extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        setBackground(new java.awt.Color(255, 204, 0));
+        setBackground(new java.awt.Color(255, 255, 102));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
