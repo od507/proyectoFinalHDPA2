@@ -4,17 +4,23 @@
  */
 package vistasParqueadero;
 
-/**
- *
- * @author ANTONIO
- */
-public class ConsultarDisponibilidad extends javax.swing.JPanel {
+import funcionalidadesParqueadero.Estacionamiento;
+import funcionalidadesParqueadero.EstacionamientosTotal;
+import javax.swing.JPanel;
+import javax.swing.JTable;
+import javax.swing.table.DefaultTableModel;
 
+public class ConsultarDisponibilidad extends javax.swing.JPanel {
+    private JTable table;
+    private DefaultTableModel tableModel;
+    private EstacionamientosTotal estacionamientosTotal;
     /**
      * Creates new form ConsultarDisponibilidad
      */
-    public ConsultarDisponibilidad() {
+     public ConsultarDisponibilidad() {
+        this.estacionamientosTotal = new EstacionamientosTotal();
         initComponents();
+        initTable();
     }
 
     /**
@@ -27,6 +33,8 @@ public class ConsultarDisponibilidad extends javax.swing.JPanel {
     private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTable1 = new javax.swing.JTable();
 
         setBackground(new java.awt.Color(102, 102, 255));
 
@@ -36,26 +44,73 @@ public class ConsultarDisponibilidad extends javax.swing.JPanel {
         jLabel1.setText("Disponibilidad");
         jLabel1.setToolTipText("");
 
+        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Ocupado", "Fila", "Columna", "Categoría"
+            }
+        ));
+        jScrollPane1.setViewportView(jTable1);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(178, 178, 178)
-                .addComponent(jLabel1)
-                .addContainerGap(197, Short.MAX_VALUE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(178, 178, 178)
+                        .addComponent(jLabel1))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(18, 18, 18)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(27, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(54, 54, 54)
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(481, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 150, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 247, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(84, 84, 84))
         );
     }// </editor-fold>//GEN-END:initComponents
+       
+    private void initTable() {
+        // Obtiene la matriz de estacionamiento desde de EstacionamientosTotal
+        Estacionamiento[][] estacionamientos = estacionamientosTotal.getEstacionamientos();
 
+        // Crear el modelo de tabla con las columnas adecuadas
+        String[] columnNames = {"Ocupado", "Fila", "Columna", "Categoría"};
+        tableModel = new DefaultTableModel(columnNames, 0);
+
+        // Cargar los datos de los estacionamientos en el modelo de tabla
+        for (int fila = 0; fila < estacionamientos.length; fila++) {
+            for (int columna = 0; columna < estacionamientos[fila].length; columna++) {
+                Estacionamiento estacionamiento = estacionamientos[fila][columna];
+                boolean ocupado = estacionamiento.obtenerOcupado();
+                char letraFila = estacionamiento.obtenerFila();
+                byte numColumna = estacionamiento.obtenerColumna();
+                String categoria = estacionamiento.obtenerCategoria();
+
+                Object[] rowData = {ocupado, letraFila, numColumna, categoria};
+                tableModel.addRow(rowData);
+            }
+        }
+
+        // Asignar el modelo de tabla al JTable
+        jTable1.setModel(tableModel);
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTable jTable1;
     // End of variables declaration//GEN-END:variables
 }

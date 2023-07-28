@@ -4,24 +4,18 @@
  */
 package vistasParqueadero;
 
-/**
- *
- * @author ANTONIO
- */
+import vistasParqueadero.Cierre;
+import vistasParqueadero.Cobro;
+import vistasParqueadero.ConfigurarEstacionamiento;
+import vistasParqueadero.ConsultarDisponibilidad;
+import vistasParqueadero.IngresarVehiculo;
+import vistasParqueadero.RegistrarVehiculo;
+import vistasParqueadero.TotalRecaudado;
+
+
 public class Principal extends javax.swing.JFrame {
 
-    /**
-     * Creates new form Principal
-     * Contendrá:
-     * Cierre
-     * Cobro
-     * Configurar Estacionamiento
-     * Consultar Disponibilidad
-     * Ingresar Vehiculo
-     * Registrar Vehiculo
-     * Total Recaudado
-     * 
-     */
+    
     Cierre cierre;
     Cobro cobro;
     ConfigurarEstacionamiento configurarEstacionamiento;
@@ -91,7 +85,6 @@ public class Principal extends javax.swing.JFrame {
         botonCierreCaja = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setMaximumSize(new java.awt.Dimension(1000, 600));
         setResizable(false);
 
         jPanel2.setBackground(new java.awt.Color(102, 102, 255));
