@@ -84,7 +84,8 @@ public class EstacionamientosTotal {
         como deseamoss usar estos valores como cadenas de texto, realizamos la conversion necesaria*/
     }
     
-  
-    
+    public Estacionamiento[][] getEstacionamientos() {
+        return estacionamientos;
+    }
     
 }
