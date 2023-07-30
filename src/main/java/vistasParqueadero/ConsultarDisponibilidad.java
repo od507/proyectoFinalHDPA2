@@ -37,6 +37,7 @@ public class ConsultarDisponibilidad extends javax.swing.JPanel {
         jTable1 = new javax.swing.JTable();
 
         setBackground(new java.awt.Color(102, 102, 255));
+        setPreferredSize(new java.awt.Dimension(1150, 600));
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
@@ -55,6 +56,10 @@ public class ConsultarDisponibilidad extends javax.swing.JPanel {
                 "Ocupado", "Fila", "Columna", "Categoría"
             }
         ));
+        jTable1.setMaximumSize(new java.awt.Dimension(650, 80));
+        jTable1.setName(""); // NOI18N
+        jTable1.setPreferredSize(new java.awt.Dimension(650, 80));
+        jTable1.setRequestFocusEnabled(false);
         jScrollPane1.setViewportView(jTable1);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
@@ -64,19 +69,19 @@ public class ConsultarDisponibilidad extends javax.swing.JPanel {
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(178, 178, 178)
-                        .addComponent(jLabel1))
-                    .addGroup(layout.createSequentialGroup()
                         .addGap(18, 18, 18)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(27, Short.MAX_VALUE))
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 750, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(328, 328, 328)
+                        .addComponent(jLabel1)))
+                .addContainerGap(182, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(54, 54, 54)
+                .addGap(27, 27, 27)
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 150, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 177, Short.MAX_VALUE)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 247, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(84, 84, 84))
         );
@@ -87,20 +92,31 @@ public class ConsultarDisponibilidad extends javax.swing.JPanel {
         Estacionamiento[][] estacionamientos = estacionamientosTotal.getEstacionamientos();
 
         // Crear el modelo de tabla con las columnas adecuadas
-        String[] columnNames = {"Ocupado", "Fila", "Columna", "Categoría"};
+        String[] columnNames = {"Estacionamientos 1", "Estacionamientos 2", "Estacionamientos 3", "Estacionamientos 4", "Estacionamientos 5", "Estacionamientos 6", "Estacionamientos 7"};
         tableModel = new DefaultTableModel(columnNames, 0);
 
         // Cargar los datos de los estacionamientos en el modelo de tabla
         for (int fila = 0; fila < estacionamientos.length; fila++) {
-            for (int columna = 0; columna < estacionamientos[fila].length; columna++) {
+            for (int columna = 0; columna < estacionamientos.length; columna++) {
                 Estacionamiento estacionamiento = estacionamientos[fila][columna];
-                boolean ocupado = estacionamiento.obtenerOcupado();
+             
+                /*boolean ocupado = estacionamiento.obtenerOcupado();
                 char letraFila = estacionamiento.obtenerFila();
                 byte numColumna = estacionamiento.obtenerColumna();
-                String categoria = estacionamiento.obtenerCategoria();
-
-                Object[] rowData = {ocupado, letraFila, numColumna, categoria};
+                String categoria = estacionamiento.obtenerCategoria();*/
+                
+                String espacioUno = estacionamiento.obtenerFila() + String.valueOf(estacionamiento.obtenerColumna()) + estacionamiento.obtenerCategoria();
+                String espacioDos = estacionamiento.obtenerFila() + String.valueOf(estacionamiento.obtenerColumna()) + estacionamiento.obtenerCategoria();
+                String espacioTres = estacionamiento.obtenerFila() + String.valueOf(estacionamiento.obtenerColumna()) + estacionamiento.obtenerCategoria();
+                String espacioCuatro = estacionamiento.obtenerFila() + String.valueOf(estacionamiento.obtenerColumna()) + estacionamiento.obtenerCategoria();
+                String espacioCinco = estacionamiento.obtenerFila() + String.valueOf(estacionamiento.obtenerColumna()) + estacionamiento.obtenerCategoria();
+                String espacioSeis = estacionamiento.obtenerFila() + String.valueOf(estacionamiento.obtenerColumna()) + estacionamiento.obtenerCategoria();
+                String espacioSiete = estacionamiento.obtenerFila() + String.valueOf(estacionamiento.obtenerColumna()) + estacionamiento.obtenerCategoria();
+               
+                Object[] rowData = {espacioUno, espacioDos, espacioTres,espacioCuatro,espacioCinco,espacioSeis,espacioSiete};
+                //tableModel.addRow(rowData);
                 tableModel.addRow(rowData);
+               
             }
         }
 

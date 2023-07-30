@@ -36,13 +36,13 @@ public class Principal extends javax.swing.JFrame {
         totalRecaudado = new TotalRecaudado();
         
         jPanel2.setBounds(0,0,400,600);
-        cierre.setBounds(400,0,600,600);
-        cobro.setBounds(400,0,600,600);
-        configurarEstacionamiento.setBounds(400,0,600,600);
-        consultarDisponibilidad.setBounds(400,0,600,600);
-        ingresarVehiculo.setBounds(400,0,600,600);
-        registrarVehiculo.setBounds(400,0,600,600);
-        totalRecaudado.setBounds(400,0,600,600);
+        cierre.setBounds(400,0,950,600);
+        cobro.setBounds(400,0,950,600);
+        configurarEstacionamiento.setBounds(400,0,950,600);
+        consultarDisponibilidad.setBounds(400,0,950,600);
+        ingresarVehiculo.setBounds(400,0,950,600);
+        registrarVehiculo.setBounds(400,0,950,600);
+        totalRecaudado.setBounds(400,0,950,600);
         
         add(cierre);
         add(cobro);
@@ -85,11 +85,11 @@ public class Principal extends javax.swing.JFrame {
         botonCierreCaja = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setResizable(false);
 
         jPanel2.setBackground(new java.awt.Color(102, 102, 255));
         jPanel2.setMaximumSize(new java.awt.Dimension(400, 600));
         jPanel2.setName(""); // NOI18N
+        jPanel2.setPreferredSize(new java.awt.Dimension(400, 600));
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
@@ -162,7 +162,7 @@ public class Principal extends javax.swing.JFrame {
                     .addComponent(botonConfigurarEstacionamiento, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(botonConsultarDisponibilidad, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(botonTotalRecaudado, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 57, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 49, Short.MAX_VALUE)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(botonRegistrarVehiculo, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(botonCobro, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -204,8 +204,8 @@ public class Principal extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 600, Short.MAX_VALUE))
+                .addComponent(jPanel2, 392, 392, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 758, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

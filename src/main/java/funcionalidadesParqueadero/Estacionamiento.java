@@ -17,6 +17,7 @@ public class Estacionamiento {
     
     public Estacionamiento(){
         ocupado = false;
+        categoria = " ";
     }
     
     public boolean obtenerOcupado(){
